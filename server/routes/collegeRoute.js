@@ -1,46 +1,87 @@
-const express = require('express')
-const routes = express.Router();
-const College = require('../model/College')
+// 
 
-routes.get('/',async(req,res)=>{
+const express = require("express");
+const routes = express.Router();
+const College = require("../model/College");
+
+// Get all colleges
+routes.get("/", async (req, res) => {
+  try {
     const data = await College.find();
-    res.json({msg:"college fetched",data:data})
-});
-// post api
-routes.post('/',async(req,res)=>{
-   try{
-     const {name,description} = req.body;
-    const data = await new College({
-        name:name,
-        description:description,
+
+    res.json({
+      msg: "College fetched successfully",
+      data: data,
     });
-    data.save();
-    res.json({msg:"College Added successfully"})
-   }
-   catch(er){
+  } catch (er) {
     console.log(er);
-    res.json({msg:"College not added"})
-    
-   }
+
+    res.json({
+      msg: "College not fetched",
+    });
+  }
 });
-routes.patch('/:id',async(req,res)=>{
-    try{
-        const data = await College.findByIdAndUpdate(req.params.id,req.body);
-        res.json({msg:"College Updated Successfully"})
-    }catch(er){
-        console.log(er);
-        res.json({msg:"College Not Updated"})
-        
-    }
+
+// Add college
+routes.post("/", async (req, res) => {
+  try {
+    const { name, description } = req.body;
+
+    const data = new College({
+      name: name,
+      description: description,
+    });
+
+    await data.save();
+
+    res.json({
+      msg: "College Added Successfully",
+    });
+  } catch (er) {
+    console.log(er);
+
+    res.json({
+      msg: "College not added",
+    });
+  }
 });
-routes.delete('/:id',async(req,res)=>{
-    try{
-        const data = await College.findByIdAndDelete(req.params.id);
-        res.json({msg:"Data Deleted Successfully"})
-    }catch(er){
-        console.log(er);
-        res.json("College not deleted")
-        
-    }
+
+// Update college
+routes.patch("/:id", async (req, res) => {
+  try {
+    await College.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    res.json({
+      msg: "College Updated Successfully",
+    });
+  } catch (er) {
+    console.log(er);
+
+    res.json({
+      msg: "College Not Updated",
+    });
+  }
 });
+
+// Delete college
+routes.delete("/:id", async (req, res) => {
+  try {
+    await College.findByIdAndDelete(req.params.id);
+
+    res.json({
+      msg: "College Deleted Successfully",
+    });
+  } catch (er) {
+    console.log(er);
+
+    res.json({
+      msg: "College not deleted",
+    });
+  }
+});
+
 module.exports = routes;
