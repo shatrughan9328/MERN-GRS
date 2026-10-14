@@ -94,7 +94,7 @@ routes.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: student._id },
+      { id: student._id, role: "Student" },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );

@@ -65,9 +65,13 @@ routes.post("/login", async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: data._id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { id: data._id, role: "Admin" },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d",
+      }
+    );
 
     res.json({
       msg: "Login Successfully",

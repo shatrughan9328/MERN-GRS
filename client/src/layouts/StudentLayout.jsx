@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   HelpCircle,
 } from "lucide-react";
+import StudentChatbot from "../components/StudentChatbot";
 
 const StudentLayout = () => {
   const navigate = useNavigate();
@@ -340,6 +341,9 @@ const StudentLayout = () => {
           />
         </main>
       </div>
+
+      {/* Floating Student AI Grievance Assistant */}
+      <StudentChatbot />
     </div>
   );
 };

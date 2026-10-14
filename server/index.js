@@ -21,6 +21,7 @@ const complaintRoute = require("./routes/complaintRoute");
 const complaintTypeRoute = require("./routes/complaintTypeRoute");
 const sessionRoute = require("./routes/sessionRoute");
 const studentRoute = require("./routes/studentRoute");
+const aiRoute = require("./routes/aiRoute");
 
 // Route Mounting
 app.use("/api/admin", adminRoute);
@@ -29,6 +30,7 @@ app.use("/api/complaint", complaintRoute);
 app.use("/api/complaint-type", complaintTypeRoute);
 app.use("/api/session", sessionRoute);
 app.use("/api/student", studentRoute);
+app.use("/api/ai", aiRoute);
 
 // Test Route
 app.get("/", (req, res) => {
