@@ -187,3 +187,19 @@ When presenting this project in an interview, emphasize:
 4. **Security & Privacy**: Strict JWT verification, IDOR prevention on student grievance tracking, and student-isolated context injection in the AI chatbot.
 
 👉 **For a complete list of 25+ technical and architectural interview questions and answers, see [INTERVIEW_QA.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/INTERVIEW_QA.md).**
+
+---
+
+## 📚 Dedicated Technology Guides & Interview Preparation (English & Hinglish)
+
+We have created comprehensive, standalone README guides for every technology used in this project, complete with core theory, project-specific architecture answers, and bilingual (English + Hinglish) interview Q&A derived from Pushkar Singh's 100 questions guides:
+
+| Technology | Focus & Architecture | Dedicated Guide |
+| :--- | :--- | :--- |
+| **React 19 & Vite** | Virtual DOM, Fiber, Hooks (`useState`, `useEffect`, `useRef`), Persistent Layouts, Chatbot UI, Controlled Forms | [README_REACT.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_REACT.md) |
+| **Node.js** | Event Loop, Libuv Thread Pool, Non-blocking I/O, Microtasks vs Macrotasks, Automation Scripts (`seed.js`), Testing | [README_NODEJS.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_NODEJS.md) |
+| **Express.js 5** | RESTful routing, Middleware pipeline, RBAC guards (`requireAdmin`), `req.params/query/body`, CORS, Error middleware | [README_EXPRESS.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_EXPRESS.md) |
+| **MongoDB & Mongoose** | NoSQL BSON schema, Virtuals (`effectivePriority`), `.populate()`, Lean aggregations, Audit trails | [README_MONGODB.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_MONGODB.md) |
+| **JWT & Security** | Token lifecycle, Bcrypt salt rounds (10), IDOR defense, RBAC student vs admin, Chatbot context scope isolation | [README_AUTH_SECURITY.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_AUTH_SECURITY.md) |
+| **AI & Heuristics** | Gemini / OpenAI integration, Zero-downtime Heuristic Fallback, Anti-hallucination grounding, Schema validator | [README_AI_SYSTEM.md](file:///c:/Users/asus/OneDrive/Desktop/MERN-GRS/README_AI_SYSTEM.md) |
+
